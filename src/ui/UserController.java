@@ -22,25 +22,20 @@ public class UserController {
 
     @FXML
     private Button saveBtn;
-
     @FXML
     private Label errorLabel;
-
     @FXML
     private TextField lastAccessText;
-
     @FXML
     private PasswordField newPasswordText;
-    
     @FXML
     private PasswordField confirmPasswordText;
-    
     private String username;
     
 
     @FXML
     void saveNewPassword(ActionEvent event) {
-    	String query = "SELECT password FROM user WHERE username = '"+username+"'";
+    	String query = "SELECT password FROM public.user WHERE username = '"+username+"'";
     	
     	try {
     		Connection connection = DatabaseConnection.getConnection();
@@ -74,9 +69,9 @@ public class UserController {
     		        info.show();
     			} else {
     				String hashedPassword = PasswordGenerator.generateStrongPasswordHash(newPasswordText.getText());
-    				String setPass = "Update usuario set password = " + "'"+ hashedPassword +"'" + " where userName= '" + username + "'";
+    				String setPassword = "Update public.user set password = " + "'"+ hashedPassword +"'" + " where username= '" + username + "'";
     	    		Statement st = connection.createStatement();
-    	            st.execute(setPass);
+    	            st.execute(setPassword);
         		}
     		}
 			
