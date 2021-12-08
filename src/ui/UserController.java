@@ -72,6 +72,12 @@ public class UserController {
     				String setPassword = "Update public.user set password = " + "'"+ hashedPassword +"'" + " where username= '" + username + "'";
     	    		Statement st = connection.createStatement();
     	            st.execute(setPassword);
+    	            Alert info = new Alert(AlertType.INFORMATION);
+    		        info.setTitle("Information");
+    		        info.setHeaderText(null);
+    		        info.initStyle(StageStyle.UTILITY);
+    		        info.setContentText("The user password was updated succesfully");
+    		        info.show();
         		}
     		}
 			

@@ -55,7 +55,7 @@ public class AdminController {
         		if(comboBoxUsers.getValue().equals("")) {
         			throw new NullPointerException();
         		}
-    		String query = "Update public.user set password = " + "''" + " where username= '" + comboBoxUsers.getValue() + "'";
+    		String query = "UPDATE public.user set password = " + "''" + " where username= '" + comboBoxUsers.getValue() + "'";
     		Statement st = connection.createStatement();
             st.execute(query);
     	} catch (NullPointerException npe){
