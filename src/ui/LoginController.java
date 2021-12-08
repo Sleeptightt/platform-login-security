@@ -83,6 +83,19 @@ public class LoginController {
 
     }
 
+    @FXML
+    void tryNewUser(ActionEvent event) {
+    	 try {
+             FXMLLoader loader= new FXMLLoader(getClass().getResource("adminDashBoard.fxml"));
+             Parent root=loader.load();
+             Scene scene = new Scene(root);
+             Main.stage.setScene(scene);
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+
+    }
+    
     void alert() {
     	Alert info = new Alert(AlertType.INFORMATION);
         info.setTitle("Information");

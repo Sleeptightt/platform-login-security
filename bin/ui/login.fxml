@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginController">
    <children>
-      <Button fx:id="loginBtn" layoutX="124.0" layoutY="271.0" mnemonicParsing="false" onAction="#tryLogin" prefHeight="46.0" prefWidth="107.0" text="Log In" textAlignment="CENTER" />
-      <Label layoutX="52.0" layoutY="84.0" text="Username" />
-      <Label layoutX="34.0" layoutY="179.0" text="Password" />
-      <PasswordField fx:id="passwordText" layoutX="103.0" layoutY="175.0" />
-      <TextField fx:id="usernameText" layoutX="104.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label fx:id="errorText" layoutX="126.0" layoutY="32.0" text="The user doesn't exist" textFill="RED" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="145.0" text="Username">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameText">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="145.0" text="Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordText">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label fx:id="errorText" text="The user doesn't exist" textFill="RED" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#tryLogin" text="Log In">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="newUser" onAction="#tryNewUser" text="New user">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </VBox>
    </children>
-</Pane>
+</VBox>
