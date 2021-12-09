@@ -13,7 +13,7 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Button fx:id="setPasswordBtn" layoutX="134.0" layoutY="115.0" mnemonicParsing="false" onAction="#setBlankUserPassword" text="Set Password">
+      <Button fx:id="setPasswordBtn" layoutX="116.0" layoutY="115.0" mnemonicParsing="false" onAction="#setBlankUserPassword" text="Erase Password">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -21,6 +21,11 @@
          <font>
             <Font size="20.0" />
          </font></Button>
+      <Button fx:id="backBtn" layoutX="34.0" layoutY="324.0" mnemonicParsing="false" onAction="#tryBack" text="Logout">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
      
    </children>
 </Pane>

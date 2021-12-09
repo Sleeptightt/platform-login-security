@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,12 +9,16 @@ import java.util.Date;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.DatabaseConnection;
 import model.PasswordGenerator;
@@ -26,6 +31,8 @@ public class UserController {
     private Label errorLabel;
     @FXML
     private TextField lastAccessText;
+    @FXML
+    private Button backBtn;
     @FXML
     private PasswordField newPasswordText;
     @FXML
@@ -95,11 +102,25 @@ public class UserController {
     }
 
     @FXML
-    void initialize() {
-    	
-    	errorLabel.setVisible(false);
+    void initialize() {  	
     	lastAccessText.setText(new Date().toString());
-    	
+    }
+    
+    @FXML
+    void tryBack(ActionEvent event) {
+		try {
+			Main.stage.close();
+			Main.stage= new Stage();
+	        Parent root;
+			root = FXMLLoader.load(getClass().getResource("login.fxml"));
+			Scene scene = new Scene(root);
+	        Main.stage.setTitle("Platform Login Security");
+	        Main.stage.setScene(scene);
+	        Main.stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}    
     }
 
 }

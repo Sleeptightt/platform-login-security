@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,10 +9,14 @@ import java.sql.Statement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.DatabaseConnection;
 
@@ -25,9 +30,9 @@ public class AdminController {
 
     @FXML
     private ComboBox<String> comboBoxUsers;
-    
+    @FXML
+    private Button backBtn;
     private Connection connection;
-    
     private PreparedStatement ps;
 
     /**
@@ -107,4 +112,20 @@ public class AdminController {
     	
     }
     
+    @FXML
+    void tryBack(ActionEvent event) {
+		try {
+			Main.stage.close();
+			Main.stage= new Stage();
+	        Parent root;
+			root = FXMLLoader.load(getClass().getResource("login.fxml"));
+			Scene scene = new Scene(root);
+	        Main.stage.setTitle("Platform Login Security");
+	        Main.stage.setScene(scene);
+	        Main.stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}    
+    }
 }

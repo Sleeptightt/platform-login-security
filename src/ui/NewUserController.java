@@ -77,7 +77,12 @@ public class NewUserController {
 			            Main.stage.setTitle("Platform Login Security");
 			            Main.stage.setScene(scene);
 			            Main.stage.show();
-		    			
+			            Alert info = new Alert(AlertType.INFORMATION);
+			            info.setTitle("Information");
+			            info.setHeaderText(null);
+			            info.initStyle(StageStyle.UTILITY);
+			            info.setContentText("New user was created successfully");
+			            info.show();
 		    		}else {
 		    			alert();
 		    		}
