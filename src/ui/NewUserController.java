@@ -60,7 +60,7 @@ public class NewUserController {
 		    				mx = Integer.max(mx,id);
 		    			}mx++;
 		    			
-		    			String safePassword = PasswordGenerator.generateStrongPasswordHash(password);
+		    			String safePassword = PasswordGenerator.createHash(password);
 		    			query = "INSERT INTO public.user (id, username, password, type) VALUES ("+mx+",'"+username+"','"+safePassword+"','normal');";                 
 		    			ps = connection.prepareStatement(query);
 			    		ps.executeUpdate();

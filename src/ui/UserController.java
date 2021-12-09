@@ -68,7 +68,7 @@ public class UserController {
     		        info.setContentText("The password can not be empty");
     		        info.show();
     			} else {
-    				String hashedPassword = PasswordGenerator.generateStrongPasswordHash(newPasswordText.getText());
+    				String hashedPassword = PasswordGenerator.createHash(newPasswordText.getText());
     				String setPassword = "Update public.user set password = " + "'"+ hashedPassword +"'" + " where username= '" + username + "'";
     	    		Statement st = connection.createStatement();
     	            st.execute(setPassword);
