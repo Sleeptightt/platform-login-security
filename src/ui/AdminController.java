@@ -30,7 +30,10 @@ public class AdminController {
     
     private PreparedStatement ps;
 
-
+    /**
+     *  Function responsible of deleting a normal user from the database.
+     *
+     */
     @FXML
     void deleteUser(ActionEvent event) {
     	try {
@@ -48,7 +51,10 @@ public class AdminController {
 		}
     }
 
-
+    /**
+     *  Function responsible of erasing the password of a user present in the database
+     *
+     */
     @FXML
     void setBlankUserPassword(ActionEvent event) {
     	try {
@@ -74,6 +80,10 @@ public class AdminController {
         info.show();
     }
     
+    /**
+     *  Function responsible of listing the normal users present in the database.
+     *
+     */
     void getComboBox() {
     	String consulta = "SELECT username FROM public.user WHERE type = 'normal'";
     	comboBoxUsers.getItems().clear();
@@ -91,12 +101,10 @@ public class AdminController {
 		
     }
     
- 
     @FXML
     void initialize() {
 		getComboBox();
     	
     }
     
-
 }

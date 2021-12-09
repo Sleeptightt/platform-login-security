@@ -4,7 +4,11 @@ import java.sql.*;
 
 public class DatabaseConnection {
 	
-	
+	/**
+     *  Attempts to connect to the postgresql database.
+     *
+     * @return              the Connection object that represents the active connection to the database
+     */
 	public static Connection getConnection() {
 		
 		try {

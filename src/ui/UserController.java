@@ -32,7 +32,10 @@ public class UserController {
     private PasswordField confirmPasswordText;
     private String username;
     
-
+    /**
+     *  Function responsible of changing the password of a user that already exists in the database
+     *
+     */
     @FXML
     void saveNewPassword(ActionEvent event) {
     	String query = "SELECT password FROM public.user WHERE username = '"+username+"'";

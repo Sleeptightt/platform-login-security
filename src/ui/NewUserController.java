@@ -37,6 +37,10 @@ public class NewUserController {
     @FXML
     private TextField usernameText;
 
+    /**
+     *  Function responsible of creating and inserting a new user into the database
+     *
+     */
     @FXML
     void tryCreate(ActionEvent event) {
     	String username = usernameText.getText();

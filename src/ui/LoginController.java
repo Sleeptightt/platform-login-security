@@ -33,6 +33,10 @@ public class LoginController {
     @FXML
     private TextField usernameText;
 
+    /**
+     *  Function responsible of validating the user data in order to log into the platform
+     *
+     */
     @FXML
     void tryLogin(ActionEvent event) {
     	
@@ -83,6 +87,10 @@ public class LoginController {
 
     }
 
+    /**
+     *  Function that opens the new user view
+     *
+     */
     @FXML
     void tryNewUser(ActionEvent event) {
     	 try {
@@ -104,15 +112,11 @@ public class LoginController {
         info.setContentText("Your password was erased by an administrator");
         info.show();
     }
-    
-   
-    @FXML
-    void initialize() {
-    	
-    	errorText.setVisible(false);
-    	
-    }
   
+    /**
+     *  Function that opens the admin user view
+     *
+     */
     void adminView() {
         try {
             FXMLLoader loader= new FXMLLoader(getClass().getResource("adminDashBoard.fxml"));
@@ -126,6 +130,10 @@ public class LoginController {
 
     }
     
+    /**
+     *  Function that opens the normal user view
+     *
+     */
     void userView(String user) {
         try {
             FXMLLoader loader= new FXMLLoader(getClass().getResource("usersDashBoard.fxml"));

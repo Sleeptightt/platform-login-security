@@ -11,7 +11,7 @@ import javax.crypto.spec.PBEKeySpec;
 /*
  * PBKDF2 salted password hashing.
  * Author: havoc AT defuse.ca
- * www: http://crackstation.net/hashing-security.htm
+ * www: http://crackstation.net/hashing-security.html
  */
 public class PasswordGenerator {
 
@@ -33,8 +33,8 @@ public class PasswordGenerator {
     /**
      * Returns a salted PBKDF2 hash of the password.
      *
-     * @param   password    the password to hash
-     * @return              a salted PBKDF2 hash of the password
+     * @param   password the password to hash
+     * @return  a salted PBKDF2 hash of the password
      */
     public static String createHash(String password)
         throws NoSuchAlgorithmException, InvalidKeySpecException
@@ -45,8 +45,8 @@ public class PasswordGenerator {
     /**
      * Returns a salted PBKDF2 hash of the password.
      *
-     * @param   password    the password to hash
-     * @return              a salted PBKDF2 hash of the password
+     * @param   password the password to hash
+     * @return  a salted PBKDF2 hash of the password
      */
     public static String createHash(char[] password)
         throws NoSuchAlgorithmException, InvalidKeySpecException
@@ -65,9 +65,9 @@ public class PasswordGenerator {
     /**
      * Validates a password using a hash.
      *
-     * @param   password    the password to check
-     * @param   goodHash    the hash of the valid password
-     * @return              true if the password is correct, false if not
+     * @param   password the password to check
+     * @param   goodHash the hash of the valid password
+     * @return  true if the password is correct, false if not
      */
     public static boolean validatePassword(String password, String goodHash)
         throws NoSuchAlgorithmException, InvalidKeySpecException
@@ -78,9 +78,9 @@ public class PasswordGenerator {
     /**
      * Validates a password using a hash.
      *
-     * @param   password    the password to check
-     * @param   goodHash    the hash of the valid password
-     * @return              true if the password is correct, false if not
+     * @param   password the password to check
+     * @param   goodHash the hash of the valid password
+     * @return  true if the password is correct, false if not
      */
     public static boolean validatePassword(char[] password, String goodHash)
         throws NoSuchAlgorithmException, InvalidKeySpecException
@@ -103,9 +103,9 @@ public class PasswordGenerator {
      * is used so that password hashes cannot be extracted from an on-line 
      * system using a timing attack and then attacked off-line.
      * 
-     * @param   a       the first byte array
-     * @param   b       the second byte array 
-     * @return          true if both byte arrays are the same, false if not
+     * @param a the first byte array
+     * @param b the second byte array 
+     * @return true if both byte arrays are the same, false if not
      */
     private static boolean slowEquals(byte[] a, byte[] b)
     {
